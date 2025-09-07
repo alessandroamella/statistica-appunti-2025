@@ -1,0 +1,127 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+a4paper, 11pt]{article}
+
+% --- Pandoc Standard Packages ---
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\usepackage{tabularx}
+
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{mathpazo}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\usepackage{booktabs}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+% --- Additional Custom Packages ---
+\usepackage[italian]{babel}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage[a4paper, total={6.8in, 9.2in}]{geometry}
+
+% --- Fonts Override (optional - comment out if you want to keep lmodern) ---
+% \usepackage[scaled]{helvet}
+% \renewcommand{\familydefault}{\sfdefault}
+
+% --- Special Content Packages ---
+\usepackage{tikz}     % For diagrams
+\usepackage{pgfplots} % For plots
+\pgfplotsset{compat=1.18} % Set pgfplots version
+
+\usepackage[shortlabels]{enumitem} % For customized lists
+\usepackage{subcaption} % For subfigures
+\usepackage{float}    % For figure placement [H]
+\usepackage{fancyhdr} % For custom headers and footers
+
+% --- PDF Metadata ---
+\hypersetup{
+  pdftitle={statistica PLS GOD},
+  pdfauthor={NIGGER},
+  hidelinks,
+  pdfcreator={latex pandoc robe}}
+
+% --- Header and Footer Configuration ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textit{prob e stat}}
+\fancyhead[R]{\nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
+
+% =========================================================================
+
+\title{statistica PLS GOD}
+\author{knee gers}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\clearpage
+
+% =========================================================================
+% ===                    INCLUDE DOCUMENTS                              ===
+% =========================================================================
+
+\input{doc_1_res.tex}
+\input{doc_2_res.tex}
+\input{doc_3_res.tex}
+\input{doc_4_res.tex}
+\input{doc_5_res.tex}
+\input{doc_6_res.tex}
+\input{doc_7_res.tex}
+
+\end{document}
