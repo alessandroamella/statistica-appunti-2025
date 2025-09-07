@@ -14,17 +14,30 @@ Se le variabili $X$ e $Y$ sono discrete (possono assumere un numero finito o num
 Lo strumento principale per lavorare con questi vettori è la **densità discreta congiunta**, che di solito si rappresenta con una **tabella a doppia entrata**.
 
 La densità congiunta, indicata con $p_{X,Y}(x, y)$, non è altro che la probabilità che _contemporaneamente_ si verifichino i due eventi $X=x$ e $Y=y$.
-$$ p\_{X,Y}(x, y) = \mathbb{P}(X=x, Y=y) $$
+
+\begin{equation*}
+p_{X,Y}(x, y) = \mathbb{P}(X=x, Y=y)
+\end{equation*}
 
 **La Tabella a Doppia Entrata**
 
 Immagina una tabella dove le righe rappresentano i valori che può assumere $X$ e le colonne i valori che può assumere $Y$. All'interno di ogni cella, c'è la probabilità che $X$ e $Y$ assumano proprio quei valori.
 
-|              $Y$              |         $y_1$         |         $y_2$         |         $y_3$         | **Marginale di X ($p_X(x)$)** |
-| :---------------------------: | :-------------------: | :-------------------: | :-------------------: | :---------------------------: |
-|           **$x_1$**           | $\mathbb{P}(x_1,y_1)$ | $\mathbb{P}(x_1,y_2)$ | $\mathbb{P}(x_1,y_3)$ |          $p_X(x_1)$           |
-|           **$x_2$**           | $\mathbb{P}(x_2,y_1)$ | $\mathbb{P}(x_2,y_2)$ | $\mathbb{P}(x_2,y_3)$ |          $p_X(x_2)$           |
-| **Marginale di Y ($p_Y(y)$)** |      $p_Y(y_1)$       |      $p_Y(y_2)$       |      $p_Y(y_3)$       |             **1**             |
+\
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$Y$ & $y_1$ & $y_2$ & $y_3$ & $\cdots$ & \textbf{Marginale di X} $(p_X(x))$ \\
+\hline
+$\mathbf{x_1}$ & $\mathbb{P}(x_1,y_1)$ & $\mathbb{P}(x_1,y_2)$ & $\mathbb{P}(x_1,y_3)$ & $\cdots$ & $p_X(x_1)$ \\
+\hline
+$\mathbf{x_2}$ & $\mathbb{P}(x_2,y_1)$ & $\mathbb{P}(x_2,y_2)$ & $\mathbb{P}(x_2,y_3)$ & $\cdots$ & $p_X(x_2)$ \\
+\hline
+$\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\ddots$ & $\vdots$ \\
+\hline
+\textbf{Marginale di Y} $(p_Y(y))$ & $p_Y(y_1)$ & $p_Y(y_2)$ & $p_Y(y_3)$ & $\cdots$ & $\mathbf{1}$ \\
+\hline
+\end{tabular}
+\
 
 **Concetti Chiave sulla Tabella:**
 
@@ -40,11 +53,11 @@ Immagina una tabella dove le righe rappresentano i valori che può assumere $X$ 
 
 **Testo:** Siano $X$ e $Y$ due v.a. discrete con densità congiunta parzialmente data da:
 
-|     $Y$      | **0** | **1** | **2** | **$p_X(x)$** |
-| :----------: | :---: | :---: | :---: | :----------: |
-|  **$X=2$**   |   ?   |  0.1  |   ?   |      ?       |
-|  **$X=4$**   |  0.1  |   ?   |   ?   |     0.6      |
-| **$p_Y(y)$** |  0.3  |  0.4  |   ?   |    **1**     |
+| \diagbox{$X$}{$Y$} | **0** | **1** | **2** | **$p_X(x)$** |
+| :----------------: | :---: | :---: | :---: | :----------: |
+|       **2**        |   ?   |  0.1  |   ?   |      ?       |
+|       **4**        |  0.1  |   ?   |   ?   |     0.6      |
+|    **$p_Y(y)$**    |  0.3  |  0.4  |   ?   |    **1**     |
 
 **Obiettivo:** Completare la tabella.
 
@@ -59,11 +72,11 @@ Immagina una tabella dove le righe rappresentano i valori che può assumere $X$ 
 
     Ora la tabella è così:
 
-    |     $Y$      | **0** | **1** |  **2**  | **$p_X(x)$** |
-    | :----------: | :---: | :---: | :-----: | :----------: |
-    |  **$X=2$**   |   ?   |  0.1  |    ?    |   **0.4**    |
-    |  **$X=4$**   |  0.1  |   ?   |    ?    |     0.6      |
-    | **$p_Y(y)$** |  0.3  |  0.4  | **0.3** |    **1**     |
+    | \diagbox{$X$}{$Y$} | **0** | **1** |  **2**  | **$p_X(x)$** |
+    | :----------------: | :---: | :---: | :-----: | :----------: |
+    |       **2**        |   ?   |  0.1  |    ?    |   **0.4**    |
+    |       **4**        |  0.1  |   ?   |    ?    |     0.6      |
+    |    **$p_Y(y)$**    |  0.3  |  0.4  | **0.3** |    **1**     |
 
 2.  **Completa le celle interne usando le somme di righe e colonne:**
 
@@ -78,11 +91,11 @@ Immagina una tabella dove le righe rappresentano i valori che può assumere $X$ 
 
 3.  **Tabella Completa:**
 
-    |     $Y$      | **0** | **1** | **2** | **$p_X(x)$** |
-    | :----------: | :---: | :---: | :---: | :----------: |
-    |  **$X=2$**   |  0.2  |  0.1  |  0.1  |     0.4      |
-    |  **$X=4$**   |  0.1  |  0.3  |  0.2  |     0.6      |
-    | **$p_Y(y)$** |  0.3  |  0.4  |  0.3  |    **1**     |
+    | \diagbox{$X$}{$Y$} | **0** | **1** | **2** | **$p_X(x)$** |
+    | :----------------: | :---: | :---: | :---: | :----------: |
+    |       **2**        |  0.2  |  0.1  |  0.1  |     0.4      |
+    |       **4**        |  0.1  |  0.3  |  0.2  |     0.6      |
+    |    **$p_Y(y)$**    |  0.3  |  0.4  |  0.3  |    **1**     |
 
 _Verifica finale:_ La somma delle celle interne è $0.2+0.1+0.1+0.1+0.3+0.2 = 1$. Corretto!
 
@@ -94,7 +107,7 @@ _Verifica finale:_ La somma delle celle interne è $0.2+0.1+0.1+0.1+0.3+0.2 = 1$
 
 - **Significato Intuitivo:** Due variabili aleatorie $X$ e $Y$ sono indipendenti se conoscere il valore di una non cambia le probabilità dell'altra. Esempio: il risultato del primo lancio di un dado ($X$) è indipendente da quello del secondo ($Y$).
 - **La Regola d'Oro (per gli esercizi):** Due variabili aleatorie discrete $X$ e $Y$ sono indipendenti **se e solo se** la probabilità congiunta è il prodotto delle marginali **PER OGNI SINGOLA CELLA** della tabella.
-  $$ p\_{X,Y}(x, y) = p_X(x) \cdot p_Y(y) \quad \text{per ogni coppia } (x,y) $$
+  $$ p_{X,Y}(x, y) = p_X(x) \cdot p_Y(y) \quad \text{per ogni coppia } (x,y) $$
 
 **Come si verifica l'indipendenza:**
 
@@ -131,9 +144,23 @@ Spesso ti viene chiesto di calcolare la probabilità di un evento che dipende da
 
 1.  Identificare tutte le coppie $(x,y)$ nella tabella che **soddisfano la condizione** dell'evento.
 2.  **Sommare le probabilità** (i valori nelle celle) di tutte queste coppie.
-    $$ \mathbb{P}((X,Y) \in B) = \sum*{(x,y) \text{ che soddisfano } B} p*{X,Y}(x,y) $$
+
+$$\mathbb{P}((X,Y) \in B) = \sum_{(x,y) \in B} p_{X,Y}(x,y)$$
+
+dove $B$ rappresenta l'insieme delle coppie $(x,y)$ che soddisfano la condizione dell'evento.
 
 #### Esercizio Guidato: Calcolare una Probabilità (Basato sull'Esercizio 1c)
+
+\
+
+\begin{center}
+\begin{NiceTabular}{c|c|c|c|c}[hvlines]
+\diagbox{$X$}{$Y$} & $\mathbf{0}$ & $\mathbf{1}$ & $\mathbf{2}$ & $\mathbf{p_X(x)}$ \\
+$2$ & $0.2$ & $0.1$ & $0.1$ & $0.4$ \\
+$4$ & $0.1$ & $0.3$ & $0.2$ & $0.6$ \\
+$\mathbf{p_Y(y)}$ & $0.3$ & $0.4$ & $0.3$ & $\mathbf{1}$ \\
+\end{NiceTabular}
+\end{center}
 
 **Testo:** Calcolare $\mathbb{P}(XY \leq 3)$.
 
@@ -153,7 +180,7 @@ Spesso ti viene chiesto di calcolare la probabilità di un evento che dipende da
 2.  **Identifica le celle "buone":** Le coppie che soddisfano la condizione sono (2,0), (2,1) e (4,0).
 
 3.  **Somma le loro probabilità:**
-    $$ \mathbb{P}(XY \leq 3) = p*{X,Y}(2,0) + p*{X,Y}(2,1) + p\_{X,Y}(4,0) $$
+    $$ \mathbb{P}(XY \leq 3) = p*{X,Y}(2,0) + p*{X,Y}(2,1) + p_{X,Y}(4,0) $$
     $$ \mathbb{P}(XY \leq 3) = 0.2 + 0.1 + 0.1 = 0.4 $$
 
 ---
@@ -163,19 +190,24 @@ Spesso ti viene chiesto di calcolare la probabilità di un evento che dipende da
 #### Teoria Semplice
 
 **Valore Atteso di X e Y**
-Si calcolano facilmente dalle distribuzioni marginali, come hai già imparato.
+Si calcolano facilmente dalle distribuzioni marginali.
 $$ E[X] = \sum_i x_i \cdot p_X(x_i) $$
 $$ E[Y] = \sum_j y_j \cdot p_Y(y_j) $$
 
 **Valore Atteso di una Funzione di (X, Y)**
+
 Se hai una nuova variabile $Z = g(X,Y)$ (es. $Z=X+Y$ o $Z=XY$), il suo valore atteso è:
-$$ E[g(X,Y)] = \sum*{i,j} g(x_i, y_j) \cdot p*{X,Y}(x_i, y_j) $$
+
+$$E[g(X,Y)] = \sum_{i,j} g(x_i, y_j) \cdot p_{X,Y}(x_i, y_j)$$
+
 In pratica: per ogni cella della tabella, calcola il valore della funzione, moltiplicalo per la probabilità di quella cella, e poi somma tutto.
 
 **Proprietà Fondamentali:**
 
 - **Linearità del valore atteso (SEMPRE VERA):** $E[aX + bY] = aE[X] + bE[Y]$.
 - **Valore atteso del prodotto (SOLO SE INDIPENDENTI):** Se $X$ e $Y$ sono indipendenti, allora $E[XY] = E[X]E[Y]$. Se non lo sono, devi calcolare $E[XY]$ con la sommatoria su tutta la tabella.
+
+\
 
 **Covarianza**
 La covarianza misura la "relazione lineare" tra $X$ e $Y$.
@@ -192,6 +224,8 @@ $$ \text{Cov}(X,Y) = E[XY] - E[X]E[Y] $$
 - Se $X$ e $Y$ sono **indipendenti** $\implies$ sono **scorrelate** (cioè $\text{Cov}(X,Y)=0$).
 - Se $X$ e $Y$ sono **scorrelate** $\not\implies$ **NON è detto** che siano **indipendenti**. Potrebbero avere una dipendenza non-lineare. Questo è un errore comune!
 
+\
+
 **Varianza della Somma**
 $$ \text{Var}(X+Y) = \text{Var}(X) + \text{Var}(Y) + 2\text{Cov}(X,Y) $$
 
@@ -199,42 +233,119 @@ $$ \text{Var}(X+Y) = \text{Var}(X) + \text{Var}(Y) + 2\text{Cov}(X,Y) $$
 
 #### Esercizio Guidato: Calcolare gli Indici (Basato sull'Esercizio 4)
 
+---
+
 **Testo:** Una scatola contiene 3 componenti nuovi, 2 usati ma funzionanti e 2 difettosi (totale 7). Si pescano 3 componenti. $X$ = "numero di componenti nuovi", $Y$ = "numero di usati".
 Calcolare $E[X]$, $E[Y]$, $E[XY]$ e $\text{Cov}(X,Y)$.
 
-_Nota: La parte più difficile qui è costruire la tabella, che è un problema di calcolo combinatorio. La soluzione fornisce la tabella già pronta. Usiamo quella per concentrarci sul calcolo degli indici._
+---
 
-**Tabella dall'Esercizio 4 (Soluzioni):**
+Per calcolare la probabilità $\mathbb{P}(X=x, Y=y)$ di estrarre esattamente $x$ componenti nuovi e $y$ componenti usati, utilizziamo il calcolo combinatorio, poiché le estrazioni avvengono senza reimmissione. La logica si basa sulla definizione classica di probabilità:
 
-|     $Y$      |   **0**   |   **1**   |  **2**   | **$p_X(x)$** |
-| :----------: | :-------: | :-------: | :------: | :----------: |
-|  **$X=0$**   |     0     |   2/35    |   1/35   |   **3/35**   |
-|  **$X=1$**   |   3/35    |   12/35   |   3/35   |  **18/35**   |
-|  **$X=2$**   |   6/35    |   6/35    |    0     |  **12/35**   |
-|  **$X=3$**   |   1/35    |     0     |    0     |   **1/35**   |
-| **$p_Y(y)$** | **10/35** | **20/35** | **5/35** |    **1**     |
+$$\mathbb{P}(\text{Evento}) = \frac{\text{Numero di Casi Favorevoli}}{\text{Numero di Casi Totali}}$$
 
-**Svolgimento Passo-Passo:**
+#### Calcolo dei Casi Totali (Denominatore)
+Il numero totale di modi in cui possiamo estrarre 3 componenti qualsiasi da un totale di 7 è dato dalla combinazione $\binom{7}{3}$:
+$$\text{Casi Totali} = \binom{7}{3} = \frac{7!}{3!(7-3)!} = \frac{7 \cdot 6 \cdot 5}{3 \cdot 2 \cdot 1} = 35$$
+Questo valore sarà il denominatore per tutte le nostre probabilità.
 
-1.  **Calcola $E[X]$ e $E[Y]$ usando i marginali.**
-    $$ E[X] = 0 \cdot \frac{3}{35} + 1 \cdot \frac{18}{35} + 2 \cdot \frac{12}{35} + 3 \cdot \frac{1}{35} = \frac{0+18+24+3}{35} = \frac{45}{35} = \frac{9}{7} $$
-    $$ E[Y] = 0 \cdot \frac{10}{35} + 1 \cdot \frac{20}{35} + 2 \cdot \frac{5}{35} = \frac{0+20+10}{35} = \frac{30}{35} = \frac{6}{7} $$
-    _(Le soluzioni del prof usano 45/35 e 30/35, che è corretto)_
+#### Calcolo dei Casi Favorevoli (Numeratore)
+Per un dato evento $(X=x, Y=y)$, dobbiamo estrarre $x$ nuovi, $y$ usati e, di conseguenza, $z = 3-x-y$ difettosi
+($x + y + z = 3 \Rightarrow z = 3 - x - y$).
 
-2.  **Calcola $E[XY]$ usando la tabella completa.** Dobbiamo sommare $x \cdot y \cdot \mathbb{P}(x,y)$ per tutte le celle dove il prodotto $x \cdot y$ non è zero.
+Il numero di modi per farlo si ottiene moltiplicando le combinazioni per ciascun gruppo:
+$$\text{Casi Favorevoli per } (X=x, Y=y) = \binom{3}{x} \binom{2}{y} \binom{2}{3-x-y}$$
 
-    - Cella (1,1): $1 \cdot 1 \cdot \frac{12}{35} = \frac{12}{35}$
-    - Cella (1,2): $1 \cdot 2 \cdot \frac{3}{35} = \frac{6}{35}$
-    - Cella (2,1): $2 \cdot 1 \cdot \frac{6}{35} = \frac{12}{35}$
-    - Le altre celle hanno $x=0$, $y=0$ o probabilità 0, quindi il loro contributo è nullo.
-      $$ E[XY] = \frac{12}{35} + \frac{6}{35} + \frac{12}{35} = \frac{30}{35} = \frac{6}{7} $$
-      _(Le soluzioni del prof dicono 30/35, corretto)_
+Dove:
 
-3.  **Calcola $\text{Cov}(X,Y)$ con la formula.**
-    $$ \text{Cov}(X,Y) = E[XY] - E[X]E[Y] = \frac{30}{35} - \left(\frac{45}{35} \cdot \frac{30}{35}\right) $$
-    $$ \text{Cov}(X,Y) = \frac{30}{35} - \frac{1350}{1225} = \frac{6}{7} - \frac{54}{49} = \frac{42 - 54}{49} = -\frac{12}{49} $$
-    _(Le soluzioni del prof danno -12/49, corretto)_
-    Il risultato negativo ci dice che c'è una relazione inversa: se peschi più componenti nuovi, è probabile che tu ne peschi meno di usati, perché hai solo 3 posti disponibili nel campione.
+- $\binom{3}{x}$: modi per scegliere $x$ nuovi dai 3 disponibili.
+- $\binom{2}{y}$: modi per scegliere $y$ usati dai 2 disponibili.
+- $\binom{2}{3-x-y}$: modi per scegliere i restanti componenti difettosi dai 2 disponibili.
+
+#### Calcolo delle Probabilità per la Tabella
+
+Applichiamo la formula $\mathbb{P}(X=x, Y=y) = \frac{\text{Casi Favorevoli}}{35}$ per ogni cella.
+
+- $\mathbb{P}(X=0, Y=1) \implies x=0, y=1, z=2$:
+$$\mathbb{P}(0,1) = \frac{\binom{3}{0}\binom{2}{1}\binom{2}{2}}{35} = \frac{1 \cdot 2 \cdot 1}{35} = \frac{2}{35}$$
+
+- $\mathbb{P}(X=0, Y=2) \implies x=0, y=2, z=1$:
+$$\mathbb{P}(0,2) = \frac{\binom{3}{0}\binom{2}{2}\binom{2}{1}}{35} = \frac{1 \cdot 1 \cdot 2}{35} = \frac{2}{35}$$
+_(Nota: questo è il valore corretto, diverso da 1/35)_
+
+- $\mathbb{P}(X=1, Y=0) \implies x=1, y=0, z=2$:
+$$\mathbb{P}(1,0) = \frac{\binom{3}{1}\binom{2}{0}\binom{2}{2}}{35} = \frac{3 \cdot 1 \cdot 1}{35} = \frac{3}{35}$$
+
+- $\mathbb{P}(X=1, Y=1) \implies x=1, y=1, z=1$:
+$$\mathbb{P}(1,1) = \frac{\binom{3}{1}\binom{2}{1}\binom{2}{1}}{35} = \frac{3 \cdot 2 \cdot 2}{35} = \frac{12}{35}$$
+
+- $\mathbb{P}(X=1, Y=2) \implies x=1, y=2, z=0$:
+$$\mathbb{P}(1,2) = \frac{\binom{3}{1}\binom{2}{2}\binom{2}{0}}{35} = \frac{3 \cdot 1 \cdot 1}{35} = \frac{3}{35}$$
+
+- $\mathbb{P}(X=2, Y=0) \implies x=2, y=0, z=1$:
+$$\mathbb{P}(2,0) = \frac{\binom{3}{2}\binom{2}{0}\binom{2}{1}}{35} = \frac{3 \cdot 1 \cdot 2}{35} = \frac{6}{35}$$
+
+- $\mathbb{P}(X=2, Y=1) \implies x=2, y=1, z=0$:
+$$\mathbb{P}(2,1) = \frac{\binom{3}{2}\binom{2}{1}\binom{2}{0}}{35} = \frac{3 \cdot 2 \cdot 1}{35} = \frac{6}{35}$$
+
+- $\mathbb{P}(X=3, Y=0) \implies x=3, y=0, z=0$:
+$$\mathbb{P}(3,0) = \frac{\binom{3}{3}\binom{2}{0}\binom{2}{0}}{35} = \frac{1 \cdot 1 \cdot 1}{35} = \frac{1}{35}$$
+
+Tutte le altre combinazioni sono impossibili (ad es. $X=2, Y=2$ richiederebbe 4 estrazioni) e hanno probabilità 0.
+
+#### Tabella Corretta e Completa
+
+Usando i valori calcolati, costruiamo la tabella corretta. Le probabilità marginali $p_X(x)$ e $p_Y(y)$ si ottengono sommando i valori di righe e colonne.
+
+| \diagbox{$X$}{$Y$} |   **0** |   **1** |  **2** | **$p_X(x)$** |
+| :----------------: | :-------: | :-------: | :------: | :----------: |
+|       **0** |     0     |   2/35    |   2/35   |   **4/35** |
+|       **1** |   3/35    |   12/35   |   3/35   |  **18/35** |
+|       **2** |   6/35    |   6/35    |    0     |  **12/35** |
+|       **3** |   1/35    |     0     |    0     |   **1/35** |
+|    **$p_Y(y)$** | **10/35** | **20/35** | **5/35** |    **1** |
+
+#### Svolgimento Passo-Passo
+\
+
+**1. Calcolo dei Valori Attesi $E[X]$ e $E[Y]$**
+
+Per calcolare i valori attesi delle variabili aleatorie $X$ e $Y$, usiamo le loro distribuzioni di probabilità marginali (le somme di righe e colonne della tabella).
+
+- **Valore atteso di X (componenti nuovi):**
+  $$E[X] = \sum_{x} x \cdot p_X(x)$$
+  $$E[X] = \left(0 \cdot \frac{4}{35}\right) + \left(1 \cdot \frac{18}{35}\right) + \left(2 \cdot \frac{12}{35}\right) + \left(3 \cdot \frac{1}{35}\right) = \frac{0 + 18 + 24 + 3}{35} = \frac{45}{35} = \frac{9}{7} \approx 1.29$$
+
+- **Valore atteso di Y (componenti usati):**
+  $$E[Y] = \sum_{y} y \cdot p_Y(y)$$
+  $$E[Y] = \left(0 \cdot \frac{10}{35}\right) + \left(1 \cdot \frac{20}{35}\right) + \left(2 \cdot \frac{5}{35}\right) = \frac{0 + 20 + 10}{35} = \frac{30}{35} = \frac{6}{7} \approx 0.86$$
+
+\
+
+**2. Calcolo del Valore Atteso del Prodotto $E[XY]$**
+
+Per calcolare $E[XY]$, sommiamo i prodotti $x \cdot y \cdot P(X=x, Y=y)$ per ogni cella della tabella congiunta. Consideriamo solo le celle dove sia $x$ che $y$ sono diversi da zero.
+
+$$E[XY] = \sum_{x} \sum_{y} xy \cdot P(X=x, Y=y)$$
+
+- Cella (X=1, Y=1): $1 \cdot 1 \cdot \frac{12}{35} = \frac{12}{35}$
+- Cella (X=1, Y=2): $1 \cdot 2 \cdot \frac{3}{35} = \frac{6}{35}$
+- Cella (X=2, Y=1): $2 \cdot 1 \cdot \frac{6}{35} = \frac{12}{35}$
+
+$$E[XY] = \frac{12}{35} + \frac{6}{35} + \frac{12}{35} = \frac{30}{35} = \frac{6}{7}$$
+
+\
+
+**3. Calcolo della Covarianza $\text{Cov}(X,Y)$**
+
+Infine, usiamo la formula della covarianza.
+
+$$\text{Cov}(X,Y) = E[XY] - E[X]E[Y]$$
+$$\text{Cov}(X,Y) = \frac{6}{7} - \left(\frac{9}{7} \cdot \frac{6}{7}\right) = \frac{6}{7} - \frac{54}{49}$$
+Per sottrarre, portiamo allo stesso denominatore (49):
+$$\text{Cov}(X,Y) = \frac{6 \cdot 7}{49} - \frac{54}{49} = \frac{42 - 54}{49} = -\frac{12}{49} \approx -0.245$$
+
+Il valore negativo della covarianza indica una **correlazione lineare negativa**. Ciò significa che all'aumentare del numero di componenti nuovi estratti ($X$), tende a diminuire il numero di componenti usati ($Y$). Questo è intuitivo: poiché si estraggono solo 3 componenti in totale, scegliere un componente nuovo "occupa uno slot" che non può essere riempito da un componente usato.
 
 ---
 
