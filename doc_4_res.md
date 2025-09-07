@@ -289,16 +289,29 @@ Queste sono scorciatoie. Se riconosci che un problema segue una di queste distri
 \centering
 \begin{tabular}{|l|c|c|c|c|}
 \hline
-\textbf{Distribuzione} & \textbf{Notazione} & \textbf{PMF} & \textbf{Media} & \textbf{Varianza} \\
+\textbf{Distribuzione (Notazione)} & \textbf{PMF} & \textbf{CDF} & \textbf{Media} & \textbf{Varianza} \\
 \hline
-Bernoulli & $X \sim B(p)$ & $\begin{cases} p & \text{se } x=1 \\ 1-p & \text{se } x=0 \end{cases}$ & $p$ & $p(1-p)$ \\
+Bernoulli ($X \sim B(p)$) &
+$\begin{cases} p & x=1 \\ 1-p & x=0 \end{cases}$ &
+$\begin{cases} 
+0 & x < 0 \\ 
+1-p & 0 \leq x < 1 \\ 
+1 & x \geq 1 
+\end{cases}$ &
+$p$ & $p(1-p)$ \\
 \hline
-Binomiale & $X \sim B(n,p)$ & $\binom{n}{k} p^k (1-p)^{n-k}$ & $np$ & $np(1-p)$ \\
+Binomiale ($X \sim B(n,p)$) &
+$\binom{n}{k} p^k (1-p)^{n-k}$ &
+$F_X(k) = \sum_{i=0}^{k} \binom{n}{i} p^i (1-p)^{n-i}$ &
+$np$ & $np(1-p)$ \\
 \hline
-Poisson & $X \sim \text{Poisson}(\lambda)$ & $e^{-\lambda} \frac{\lambda^k}{k!}$ & $\lambda$ & $\lambda$ \\
+Poisson ($X \sim \text{Poisson}(\lambda)$) &
+$e^{-\lambda} \frac{\lambda^k}{k!}$ &
+$F_X(k) = \sum_{i=0}^{k} e^{-\lambda} \frac{\lambda^i}{i!}$ &
+$\lambda$ & $\lambda$ \\
 \hline
 \end{tabular}
-\caption{Principali distribuzioni discrete}
+\caption{Principali distribuzioni discrete con PMF e CDF}
 \end{table}
 
 **Esercizio Svolto: Esercizio 6 dalla scheda**
