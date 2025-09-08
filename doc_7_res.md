@@ -539,7 +539,7 @@ Le classi comunicanti sono: $\{1,2,3\}$, $\{4\}$, $\{5,6\}$.
 
 ---
 
-# Esercizio 2
+**Esercizio 2**
 
 Si consideri una catena di Markov $(X_n)_n$ con spazio degli stati $\mathcal{S} = \{1, 2, 3, 4, 5\}$ e matrice di transizione
 
