@@ -217,7 +217,7 @@ _Svolgimento passo-passo:_
 
 ---
 
-### 4. Riepilogo e Consigli per lo Studio
+### Riepilogo e Consigli per lo Studio
 
 #### **Punti Chiave da Fissare in Mente**
 
