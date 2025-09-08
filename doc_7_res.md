@@ -266,10 +266,11 @@ $\vec{p}_{X_n} = \vec{p}_{X_1} \cdot \Pi^{n-1}$
 
 #### Esercizio Pratico (Esercizio 1d)
 
+\
 
-\subsection{Dati del Problema}
-
+\textbf{Dati del Problema}
 Data la matrice di transizione:
+
 \begin{equation*}
 \Pi = \begin{pmatrix} 
 1/2 & 1/2 & 0 & 0 & 0 & 0 \\ 
@@ -288,7 +289,9 @@ E la distribuzione iniziale:
 
 \textbf{Obiettivo}: Calcolare $\mathbb{P}(X_3=2)$.
 
-\subsection{Strategia Risolutiva}
+\
+
+**Strategia Risolutiva**
 
 Per trovare $\mathbb{P}(X_3=2)$, utilizziamo la formula:
 \begin{equation*}
@@ -297,53 +300,46 @@ Per trovare $\mathbb{P}(X_3=2)$, utilizziamo la formula:
 
 La probabilità cercata sarà la seconda componente del vettore risultante.
 
-\subsection{Calcolo delle Probabilità di Transizione a 2 Passi}
+\
+
+**Calcolo delle Probabilità di Transizione a 2 Passi**
 
 Invece di calcolare l'intera matrice $\Pi^2$, calcoliamo solo gli elementi necessari: $\pi_{i2}^{(2)}$ per tutti gli stati $i$.
 
-\subsubsection{Analisi dei Percorsi}
+\
+
+**Analisi dei Percorsi**
 
 Per raggiungere lo stato 2 in esattamente 2 passi da ogni stato:
 
 \begin{align*}
 \pi_{12}^{(2)} &: \text{Percorso } 1 \to 1 \to 2 \\
-&= P(1 \to 1) \cdot P(1 \to 2) = \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4}
-\end{align*}
-
-\begin{align*}
+&= P(1 \to 1) \cdot P(1 \to 2) = \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4} \\
 \pi_{22}^{(2)} &: \text{Da stato 2, si va necessariamente in 3} \\
 &\text{Non esistono percorsi } 2 \to \cdot \to 2 \text{ in 2 passi} \\
-&= 0
-\end{align*}
-
-\begin{align*}
+&= 0 \\
 \pi_{32}^{(2)} &: \text{Percorso } 3 \to 1 \to 2 \\
-&= P(3 \to 1) \cdot P(1 \to 2) = \frac{1}{3} \cdot \frac{1}{2} = \frac{1}{6}
-\end{align*}
-
-\begin{align*}
+&= P(3 \to 1) \cdot P(1 \to 2) = \frac{1}{3} \cdot \frac{1}{2} = \frac{1}{6} \\
 \pi_{42}^{(2)} &: \text{Dallo stato 4 non si può raggiungere lo stato 2} \\
-&= 0
-\end{align*}
-
-\begin{align*}
+&= 0 \\
 \pi_{52}^{(2)} &: \text{Dallo stato 5 non si può raggiungere lo stato 2} \\
-&= 0
-\end{align*}
-
-\begin{align*}
+&= 0 \\
 \pi_{62}^{(2)} &: \text{Dallo stato 6 non si può raggiungere lo stato 2} \\
 &= 0
 \end{align*}
 
-\subsubsection{Matrice delle Probabilità a 2 Passi (Colonna 2)}
+\
+
+**Matrice delle Probabilità a 2 Passi (Colonna 2)**
 
 La seconda colonna di $\Pi^2$ è:
 \begin{equation*}
 \text{Colonna 2 di } \Pi^2 = \begin{pmatrix} 1/4 \\ 0 \\ 1/6 \\ 0 \\ 0 \\ 0 \end{pmatrix}
 \end{equation*}
 
-\subsection{Calcolo Finale}
+\
+
+**Calcolo Finale**
 
 Utilizzando la formula della probabilità totale:
 \begin{align*}
@@ -358,16 +354,22 @@ Sostituendo i valori:
 &= \frac{1}{8}
 \end{align*}
 
-\subsection{Verifica del Calcolo}
+\
+
+**Verifica del Calcolo**
 
 Il calcolo può essere verificato attraverso:
 \begin{equation*}
 \begin{pmatrix} 1/2 & 1/4 & 0 & 0 & 0 & 1/4 \end{pmatrix} \begin{pmatrix} 1/4 \\ 0 \\ 1/6 \\ 0 \\ 0 \\ 0 \end{pmatrix} = \frac{1}{2} \cdot \frac{1}{4} = \frac{1}{8}
 \end{equation*}
 
-\subsection{Conclusione}
+\
 
+**Conclusione**
+
+\begin{equation*}
 \boxed{\mathbb{P}(X_3=2) = \frac{1}{8}}
+\end{equation*}
 
 \textbf{Nota}: Se nelle tue soluzioni compare il risultato $\frac{1}{6}$, potrebbe esserci un errore di stampa o un calcolo diverso. Il procedimento mostrato qui è matematicamente corretto seguendo la definizione standard delle catene di Markov.
 
@@ -375,18 +377,24 @@ Il calcolo può essere verificato attraverso:
 ---
 
 
-\subsection{PER CAPIRE}
+\
+
+**PER CAPIRE**
 
 Vuoi $\mathbf{P(X_t = s)}$? Fai così:
 
-\subsubsection{Step 1: Identifica}
+\
+
+**Step 1: Identifica**
 \begin{itemize}
     \item $\mathbf{t}$ = tempo che vuoi
     \item $\mathbf{s}$ = stato che vuoi  
     \item $\mathbf{passi}$ = $t - 1$
 \end{itemize}
 
-\subsubsection{Step 2: Dal Grafico}
+\
+
+**Step 2: Dal Grafico**
 
 \begin{center}
 \begin{tikzpicture}[
@@ -419,7 +427,9 @@ Per ogni stato di partenza $i = 1, 2, 3, 4, 5, 6$, calcola:
     \item $\pi_{is}^{(\text{passi})}$ = probabilità di andare da $i$ a $s$ in ``passi'' passi
 \end{itemize}
 
-\subsubsection{Step 3: Fai il Vettore Colonna}
+\
+
+**Step 3: Fai il Vettore Colonna**
 
 \begin{equation*}
 \begin{bmatrix}
@@ -432,12 +442,16 @@ Per ogni stato di partenza $i = 1, 2, 3, 4, 5, 6$, calcola:
 \end{bmatrix}
 \end{equation*}
 
-\subsubsection{Step 4: Moltiplicazione Scalare}
+\
+
+**Step 4: Moltiplicazione Scalare**
 \begin{equation*}
 \vec{p}_{X_1} \times \text{(vettore colonna)} = \text{risultato}
 \end{equation*}
 
-\subsection{Esempio: $P(X_3 = 2)$}
+\
+
+**Esempio: $P(X_3 = 2)$**
 
 $\mathbf{t = 3, s = 2 \rightarrow \text{passi} = 2}$
 
@@ -468,7 +482,9 @@ Dal grafico, calcolo $\pi_{i2}^{(2)}$:
 \begin{bmatrix} 1/2 & 1/4 & 0 & 0 & 0 & 1/4 \end{bmatrix} \times \begin{bmatrix} 1/4 \\ 0 \\ 1/6 \\ 0 \\ 0 \\ 0 \end{bmatrix} = \frac{1}{8}
 \end{equation*}
 
-\subsection{Schema Veloce}
+\
+
+**Schema Veloce**
 
 \begin{center}
 \begin{tikzpicture}[node distance=1.5cm]
@@ -549,7 +565,7 @@ X_1 & 1 & 2 & 3 & 4 & 5 \\
 \vec{p}_{X_1} & 1/3 & 0 & 1/3 & 1/3 & 0
 \end{array}$$
 
-## Grafo della Catena di Markov
+**Grafo della Catena di Markov**
 
 \begin{center}
 \begin{tikzpicture}[
@@ -584,7 +600,7 @@ X_1 & 1 & 2 & 3 & 4 & 5 \\
 \end{tikzpicture}
 \end{center}
 
-## Analisi delle Classi Comunicanti
+**Analisi delle Classi Comunicanti**
 
 Dalla matrice di transizione e dal grafo possiamo identificare:
 
@@ -620,7 +636,7 @@ Se una catena è **irriducibile e a stati finiti** (come quasi tutte quelle dei 
 
 ---
 
-### Distribuzione Invariante - Esempio Guidato
+**Distribuzione Invariante - Esempio Guidato**
 
 #### Il Problema
 Consideriamo una catena di Markov con 3 stati {1, 2, 3} e matrice di transizione:
