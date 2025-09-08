@@ -138,9 +138,15 @@ Una volta che hai la PMF, puoi calcolare due numeri che riassumono la tua variab
     **Formula di calcolo (la più comoda!)**: $Var(X) = \sigma^2 = E[X^2] - (E[X])^2$
 
     - **Come si usa**:
+
       1.  Calcoli $E[X]$ come prima.
       2.  Calcoli $E[X^2]$. La formula è simile a quella di $E[X]$, ma elevi al quadrato i valori $x_i$: $E[X^2] = \sum_{x_i \in S_X} x_i^2 \cdot p_X(x_i)$.
       3.  Applichi la formula della varianza.
+
+    - **Proprietà utili della varianza**:
+
+      1.  **Costanti**: $Var(c) = 0$ (le costanti non variano!)
+      2.  **Moltiplicazione per costante**: $Var(cX) = c^2 \cdot Var(X)$
 
 **Deviazione Standard ($\sigma_X$)**: È semplicemente la radice quadrata della varianza: $\sigma_X = \sqrt{Var(X)}$. Ha il vantaggio di avere la stessa unità di misura di $X$.
 
