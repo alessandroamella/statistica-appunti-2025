@@ -1,6 +1,6 @@
 # Spazi di Probabilità
 
-### L'Esperimento Aleatorio, lo Spazio Campionario e gli Eventi
+### 1. L'Esperimento Aleatorio, lo Spazio Campionario e gli Eventi
 
 Questa è la base di tutto. Se capisci bene questi concetti, il resto sarà in discesa.
 
@@ -38,7 +38,7 @@ Immagina la probabilità come un gioco. Ogni gioco ha delle regole e dei possibi
 
 ---
 
-### Algebra degli Eventi (Come Tradurre le Parole in Matematica)
+### 2. Algebra degli Eventi (Come Tradurre le Parole in Matematica)
 
 Questa è la parte più importante per risolvere gli esercizi della tua prima scheda. Devi imparare a tradurre le frasi in italiano ("almeno uno", "entrambi", "nessuno") nel linguaggio matematico degli insiemi.
 
@@ -118,7 +118,7 @@ _Tre eventi A, B, C._
 
 ---
 
-### Assiomi di Probabilità e Calcolo Pratico
+### 3. Assiomi di Probabilità e Calcolo Pratico
 
 Ora che sappiamo descrivere gli eventi, associamogli un numero: la probabilità.
 
@@ -217,7 +217,7 @@ _Svolgimento passo-passo:_
 
 ---
 
-### Riepilogo e Consigli per lo Studio
+### 4. Riepilogo e Consigli per lo Studio
 
 #### **Punti Chiave da Fissare in Mente**
 
